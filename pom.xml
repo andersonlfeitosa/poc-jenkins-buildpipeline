@@ -182,13 +182,13 @@
     <repository>
       <id>releases</id>
       <name>Repositório de Releases</name>
-      <url>http://${repository}/nexus/content/repositories/releases/</url>
+      <url>http://192.168.99.100:8081/nexus/content/repositories/releases/</url>
       <layout>default</layout>
     </repository>
     <snapshotRepository>
       <id>snapshots</id>
       <name>Repositório de Snapshots</name>
-      <url>http://${repository}/nexus/content/repositories/snapshots/</url>
+      <url>http://192.168.99.100:8081/nexus/content/repositories/snapshots/</url>
       <layout>default</layout>
     </snapshotRepository>
   </distributionManagement>
@@ -198,7 +198,7 @@
       <id>central</id>
       <name>Central</name>
       <layout>default</layout>
-      <url>http://${repository}/nexus/content/repositories/central/</url>
+      <url>http://192.168.99.100:8081/nexus/content/repositories/central/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -206,7 +206,7 @@
     <repository>
       <id>releases</id>
       <name>Repositório de Releases</name>
-      <url>http://${repository}/nexus/content/repositories/releases/</url>
+      <url>http://192.168.99.100:8081/nexus/content/repositories/releases/</url>
       <snapshots>
         <updatePolicy>never</updatePolicy>
       </snapshots>
@@ -217,7 +217,7 @@
     <repository>
       <id>snapshots</id>
       <name>Repositório de Snapshots</name>
-      <url>http://${repository}/nexus/content/repositories/snapshots/</url>
+      <url>http://192.168.99.100:8081/nexus/content/repositories/snapshots/</url>
       <snapshots>
         <updatePolicy>always</updatePolicy>
       </snapshots>
