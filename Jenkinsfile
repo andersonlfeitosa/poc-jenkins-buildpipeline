@@ -9,17 +9,17 @@ node {
       sh "mvn clean"
    }
    stage('Build') {
-      sh "mvn install -DskipTest"
+      sh "mvn install -DskipTests -s $JENKINS_HOME/settings.xml"
    }
    stage('Unit Tests') {
       sh "mvn test"
       //junit '**/target/surefire-reports/TEST-*.xml'
    }
    stage('Sonar') {
-      sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.99.100:9000 -Dsonar.jdbc.url=\"jdbc:h2:tcp://192.168.99.100/sonar\""
+      sh "mvn sonar:sonar -s $JENKINS_HOME/settings.xml"
    }
    stage('Archive') {
-      sh "mvn deploy -DskipTest"
+      sh "mvn deploy -DskipTest -s $JENKINS_HOME/settings.xml"
    }
    stage('Docker') {
       sh "mvn package docker:build docker:push"
