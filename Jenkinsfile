@@ -3,7 +3,7 @@ node {
    env.PATH = "${tool 'M3'}/bin:${env.PATH}"
    
    stage('Checkout') {
-      git 'https://github.com/andersonlfeitosa/maven-release-plugin-demo.git'
+      git 'https://github.com/andersonlfeitosa/poc-jenkins-buildpipeline.git'
    }
    stage('Clean') {
       sh "mvn clean"
