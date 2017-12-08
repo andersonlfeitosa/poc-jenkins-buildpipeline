@@ -13,7 +13,7 @@ node {
    }
    stage('Unit Tests') {
       sh "mvn test"
-      junit '**/target/surefire-reports/TEST-*.xml'
+      //junit '**/target/surefire-reports/TEST-*.xml'
    }
    stage('Sonar') {
       sh "mvn sonar:sonar"
