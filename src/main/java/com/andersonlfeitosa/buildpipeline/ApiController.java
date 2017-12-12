@@ -20,6 +20,7 @@ public class ApiController {
    */
   @RequestMapping("/")
   public String sayHello() {
+    System.exit(1);
     return ("Hello World, this is a SpringBoot Microservice");
   }
 
