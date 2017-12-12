@@ -38,7 +38,7 @@ node {
 //   }
    stage('Sonar') {
         withSonarQubeEnv('Sonar') {
-            sh "${mvn} sonar:sonar"
+            sh "${mvn} clean install sonar:sonar"
         }
    }
    stage('Quality Gate') {
