@@ -15,9 +15,9 @@
   <version>1.0.0-SNAPSHOT</version>
   
   <scm>
-    <connection>scm:git:git://URL.git</connection>
-    <developerConnection>scm:git:git@github.com:maanaim/hbase-om.git</developerConnection>
-    <url>URL</url>
+    <connection>scm:git:https://github.com/andersonlfeitosa/poc-jenkins-buildpipeline.git</connection>
+    <developerConnection>scm:git:https://github.com/andersonlfeitosa/poc-jenkins-buildpipeline.git</developerConnection>
+    <url>https://github.com/andersonlfeitosa/poc-jenkins-buildpipeline.git</url>
     <tag>HEAD</tag>
   </scm>
 

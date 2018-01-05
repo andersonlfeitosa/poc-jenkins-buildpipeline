@@ -1,7 +1,7 @@
 node {
    
    env.PATH = "${tool 'M3'}/bin:${env.PATH}"
-   //String mvn = "mvn -s $JENKINS_HOME/settings.xml"
+   String mvn = "mvn -s $JENKINS_HOME/settings.xml"
    
    // adds job parameters within jenkinsfile
 //   properties([
@@ -27,18 +27,18 @@ node {
    stage('Checkout') {
       git 'https://github.com/andersonlfeitosa/poc-jenkins-buildpipeline.git'
    }
-   stage('Clean') {
-       bat "mvn clean"
-   }
-   stage('Build') {
-       bat "mvn install -DskipTests"
-   }
-   stage('Unit Tests') {
-       bat "mvn test"
-   }
+//   stage('Clean') {
+//       sh "${mvn} clean"
+//   }
+//   stage('Build') {
+//       sh "${mvn} install -DskipTests"
+//   }
+//   stage('Unit Tests') {
+//       sh "${mvn} test"
+//   }
    stage('Sonar') {
         withSonarQubeEnv('Sonar') {
-            bat "mvn clean install sonar:sonar"
+            sh "${mvn} clean install sonar:sonar"
         }
    }
    stage('Quality Gate') {
@@ -50,10 +50,10 @@ node {
         }
    }
    stage('Archive') {
-      bat "mvn deploy -DskipTest"
+      sh "${mvn} deploy -DskipTest"
    }
    stage('Docker') {
-      bat "dir"
+      sh "ls -la"
       //sh "mvn package docker:build docker:push"
    }
 
