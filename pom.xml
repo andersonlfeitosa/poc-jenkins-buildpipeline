@@ -200,6 +200,7 @@
     </dependency>
   </dependencies>
   
+  <!-- 
   <distributionManagement>
     <repository>
       <id>releases</id>
@@ -248,5 +249,6 @@
       </releases>
     </repository>
   </repositories>
+   -->
 
 </project>
