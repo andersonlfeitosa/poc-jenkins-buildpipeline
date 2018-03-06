@@ -199,7 +199,22 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
+
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>Repositório de Releases</name>
+      <url>file:///tmp/repositories/releases/</url>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>Repositório de Snapshots</name>
+      <url>file:///tmp/repositories/snapshots/</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
+         
   <!-- 
   <distributionManagement>
     <repository>
