@@ -2,6 +2,7 @@ node {
    
    env.PATH = "${tool 'M3'}/bin:${env.PATH}"
 //   String mvn = "mvn -s $JENKINS_HOME/settings.xml"
+   String mvn = "mvn"
    
    // adds job parameters within jenkinsfile
 //   properties([
