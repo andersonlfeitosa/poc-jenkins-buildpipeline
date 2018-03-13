@@ -23,20 +23,20 @@ node {
   stage('Archive') {
     sh "mvn deploy -DskipTest"
   }
-   stage('Sonar') {
-  withSonarQubeEnv('Sonar') {
-  sh "${mvn} clean install sonar:sonar"
+  stage('Sonar') {
+    withSonarQubeEnv('Sonar') {
+      sh "mvn clean install sonar:sonar"
+    }
+  }
+  stage('Quality Gate') {
+    timeout(time: 1, unit: 'HOURS') {
+      def qg = waitForQualityGate()
+      if (qg.status != 'OK') {
+        error "Pipeline aborted due to quality gate failure: ${qg.status}"
       }
- }
-   stage('Quality Gate') {
-        timeout(time: 1, unit: 'HOURS') {
-            def qg = waitForQualityGate()
-            if (qg.status != 'OK') {
-                error "Pipeline aborted due to quality gate failure: ${qg.status}"
-            }
-        }
-   }
+    }
+  }
   stage('Docker') {
-    sh "mvn package docker:build docker:push"
+    //sh "mvn package docker:build docker:push"
   }
 }
